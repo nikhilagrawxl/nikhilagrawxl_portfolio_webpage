@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Agrawal's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100;1,300&display=swap" rel="stylesheet">
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/3a7c41cbf6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo1.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <span>Nikhil</span> <br>Agrawal</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm Nikhil Agrawal from a city called Satna in Madhya Pradesh. Currently I'm in my III year of pursuing B.Tech. in Computer Science Engineering. I want to pursue a challenging career in the software engineering industry and be a part of the organization that gives a scope to enhance my knowledge and skills, which can be used to serve the company and provide excellent results.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">College Projects</p>
+                        <p class="tab-links" onclick="opentab('projects')">Personal Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Programming</span><br>C • C++ • JavaScript • Matlab • CSS • 
+                                PHP • My SQL • Assembly 
+                                <br>Familiar: Python • Node.JS </li>
+                            <li><span>Markup</span><br>HTML</li>
+                            <li><span>Operating System</span><br>Windows 
+                                <br>Familiar: Linux </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>December 2022</span><br>Land Registration using Blockchain “LandBlock”</li>
+                            <li><span>December 2022</span><br>Movie Recommendation System (Machine Learning)</li>
+                            <li><span>May 2022</span><br>Shortest Path and Cab Booking Service “Cabify” (C++ Algorithms)
+                            </li>
+                            <li><span>December 2021</span><br>Hospital Management System (HTML, CSS, JS, MySQL & PHP)
+                            </li>
+                            <li><span>December 2021</span><br>Implementation of Data Structures for Railway/Airplane Reservation 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>June 2022</span><br>Fitness Webpage</li>
+                            <li><span>June 2022</span><br>Food Delivery App Webpage</li>
+                            <li><span>May 2022</span><br>Black Jack Web Game
+                            </li>
+                            <li><span>January 2023</span><br>Educational Institute Webpage
+                            </li>
+                            <li><span>January 2023</span><br>Personal Portfolio Webpage 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-2024</span><br>B.Tech. (II Year-IV Year) from Jaypee Institute of Information Technology, Sector 62 (Noida)</li>
+                            <li><span>2021</span><br>B.Tech. (I Year) from S.R.M. Institute of Science and Technology, KTR (Chennai)</li>
+                            <li><span>2020</span><br>Senior Secondary from Mother's Pride Public Higher Secondary School, Satna (M.P.)</li>
+                            <li><span>2018</span><br>Secondary from St. Michael's Higher Secondary School, Satna (M.P.)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Software Development</h2>
+                    <p>Learning and Practicing languages like C++ & Python. Constantly learning algorithms and solving problems. Also did some projects on it.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Web Development</h2>
+                    <p>Learning and Practicing <br>Frontend - HTML, CSS, JavaScript , <br>Backend - Node.JS. <br>Also did some projects on it.</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bitcoin"></i>
+                    <h2>Blockchain Development</h2>
+                    <p>Learning and Practicing language like Solidity which works on Ethereum Blockchain. Also did a project on it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-3.jpg">
+                    <div class="layer">
+                        <h3>BlackJack WebGame</h3>
+                        <p>Made a simple black jack game where a user can play on a webpage. The whole game was made using HTML, CSS and JavaScript</p>
+                        <a href="https://github.com/nikhilagrawxl/BlackJack_Game_Webapp.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.jpg">
+                    <div class="layer">
+                        <h3>Food Delivery App Webpage</h3>
+                        <p>A responsive webpage for a food delivery app using HTML, CSS and JS.</p>
+                        <a href="https://github.com/nikhilagrawxl/Webpage_for_Food_Delivery_App.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-1.jpg">
+                    <div class="layer">
+                        <h3>Land Registration using Blockchain 
+                            <br>“LandBlock”</h3>
+                        <p>A project made using solidity on Ethereum blockchain which helps the user to register for land on blockchain. Frontend was made using HTML, CSS and JavaScript. Blockchain part was made using Solidity. Backend was made using MongoDB</p>
+                        <a href="https://github.com/nikhilagrawxl/Land_Registration_System_Using_Blockchain.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/nikhilagrawxl?tab=repositories" class="btn">See More</a>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><a href="mailto:niknir136@gmail.com"><i class="fa-solid fa-envelope"></i>niknir136@gmail.com</a></p>
+                    <p><a href="https://wa.me/+917587685847"><i class="fa-solid fa-phone"></i> +91-7587685847</a></p>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com/in/nikhilagrawxl"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/nikhilagrawxl"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://twitter.com/nikhilagrawxl"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com/nikhilagrawxl"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="images/Nikhil A Resume3 (1) (1).pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Nikhil Agrawal <i class="fa-solid fa-heart"></i></p>
+        </div>
+    </div>
+    <script>
+        var sidemeu=document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemeu.style.right="0";
+        }
+
+        function closemenu(){
+            sidemeu.style.right="-200px";
+        }
+    </script>
+</body>
+</html>
