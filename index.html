@@ -4,188 +4,384 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikhil Agrawal's Portfolio</title>
+    <!-- SEO Best Practices -->
+    <title>Nikhil Agrawal | Backend & AI Engineer</title>
+    <meta name="description" content="Portfolio of Nikhil Agrawal, a Software Engineer specializing in backend systems, scalable microservices, and AI integrations at Snapdeal.">
+    <!-- Fonts and Styles -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100;1,300&display=swap" rel="stylesheet">
-    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3a7c41cbf6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
+    <!-- Spring Boot Splash Screen Sequence -->
+    <div id="splash-screen">
+        <div class="spring-boot-terminal">
+<pre id="spring-banner" class="hidden-banner">
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/
+ :: Spring Boot ::               (v3.1.2)
+</pre>
+            <div id="splash-logs"></div>
+            <span class="typewriter-cursor" id="splash-cursor">|</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">NA<span>.</span></a>
+            <ul id="sidemenu" class="nav-links">
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+                <i class="fa-solid fa-xmark menu-icon" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section reveal">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Software Engineer @ Snapdeal (Acevector Group)</p>
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Nikhil Agrawal</span><br>Backend & AI Engineer.</h1>
+                <div class="typewriter-container">
+                    <span class="typewriter" id="typewriter"></span><span class="typewriter-cursor">|</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Run CLI</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Terminal Section -->
+    <section id="about" class="section reveal">
         <div class="container">
-            <nav>
-                <img src="images/logo1.jpg" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text glass-card">
+                    <p>I'm Nikhil Agrawal, a Software Engineer specializing in backend development and AI orchestration. Currently, I work at Snapdeal, where I architect centralized microservices providing unified abstraction layers to seamlessly integrate advanced Large Language Models (LLMs).</p>
+                    <p>My expertise lies in building dynamic routing pipelines, high-speed session persistences using Aerospike, and sophisticated event processing systems with Apache Kafka.</p>
+                    <p>I am passionate about building automated pipelines, optimizing systems to reduce latency and dependencies, and driving measurable impact through innovative AI solutions.</p>
+                </div>
+                
+                <!-- Developer Terminal -->
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="close-btn"></span>
+                            <span class="min-btn"></span>
+                            <span class="max-btn"></span>
+                        </div>
+                        <div class="terminal-title">nikhil@portfolio:~</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body" onclick="document.getElementById('terminal-input').focus()">
+                        <div class="terminal-output" id="terminal-output">
+                            <span class="term-system">Booting NikhilOS v2.0...</span><br>
+                            <span class="term-system">Connection securely established.</span><br>
+                            Welcome to the interactive CLI! Type <span class="highlight-code">'help'</span> to see available commands.<br><br>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="prompt">nikhil@portfolio:~$ </span>
+                            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Languages & Frameworks</h3>
+                    <ul class="skill-tags">
+                        <li>Java 17/8</li>
+                        <li>Python</li>
+                        <li>Spring Boot 3.x/2.x</li>
+                        <li>Microservices</li>
+                        <li>Hibernate</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Infrastructure & Tools</h3>
+                    <ul class="skill-tags">
+                        <li>Apache Kafka</li>
+                        <li>Kubernetes</li>
+                        <li>Docker</li>
+                        <li>Jenkins</li>
+                        <li>Grafana</li>
+                        <li>Pinpoint</li>
+                        <li>Linux & Git</li>
+                    </ul>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <ul class="skill-tags">
+                        <li>MySQL</li>
+                        <li>Cassandra</li>
+                        <li>HBase</li>
+                        <li>Aerospike</li>
+                        <li>AWS S3</li>
+                    </ul>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>AI / LLM</h3>
+                    <ul class="skill-tags">
+                        <li>Large Language Models (LLMs)</li>
+                        <li>Generative AI</li>
+                        <li>Spring AI</li>
+                        <li>MCP (Model Context Protocol)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="telemetry-title">Live System Telemetry</h3>
+            <div class="telemetry-dashboard">
+                <div class="telemetry-panel">
+                    <div class="panel-header">
+                        <h4><i class="fa-solid fa-server"></i> Server Load (Java/Spring)</h4>
+                        <div class="status-indicator"></div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chart-load" class="telemetry-chart"></canvas>
+                    </div>
+                </div>
+                <div class="telemetry-panel">
+                    <div class="panel-header">
+                        <h4><i class="fa-solid fa-network-wired"></i> Kafka Throughput (EPS)</h4>
+                        <div class="status-indicator warning"></div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chart-kafka" class="telemetry-chart"></canvas>
+                    </div>
+                </div>
+                <div class="telemetry-panel">
+                    <div class="panel-header">
+                        <h4><i class="fa-solid fa-microchip"></i> AI Model Inference Latency</h4>
+                    </div>
+                    <div class="gauge-container">
+                        <div class="gauge-ring-wrapper">
+                            <div class="gauge-ring"></div>
+                            <div class="gauge-value" id="latency-val">45<span class="unit">ms</span></div>
+                        </div>
+                        <div class="gauge-label">Status: Optimal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">Sept 2024 - Present</div>
+                    <h3>Software Engineer 1</h3>
+                    <h4>Snapdeal (Acevector Group) - Gurugram, Haryana</h4>
+                    
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div class="impact-content">
+                                <h5>AI Orchestration Core</h5>
+                                <p>Architected a centralized microservice (Java 17 / Spring Boot) abstracting and routing various LLMs.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-headset"></i></div>
+                            <div class="impact-content">
+                                <h5>Post-Order Chatbot</h5>
+                                <p>Automated complex customer return journeys, resulting in a 3x reduction in support call volume.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="impact-content">
+                                <h5>Ads Reporting Engine</h5>
+                                <p>Revamped Seller panels and launched an automated reporting system generating ₹15L daily revenue.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <div class="impact-content">
+                                <h5>Kafka Event Pipelines</h5>
+                                <p>Re-engineered the Ads conversion tracking pipelines using Kafka event streaming and HBase persistence.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-tags"></i></div>
+                            <div class="impact-content">
+                                <h5>Dynamic VIP Pricing</h5>
+                                <p>Enhanced the VIP Subscription engine for real-time pricing at checkout via a custom A/B testing framework.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div class="impact-content">
+                                <h5>Search Query Rewriting</h5>
+                                <p>Integrated LLMs into the core search service to rescue failed queries, boosting search-to-detail conversions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">Feb 2024 - Aug 2024</div>
+                    <h3>Software Engineer Intern</h3>
+                    <h4>Snapdeal (Acevector Group) - Gurugram, Haryana</h4>
+                    
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-user-shield"></i></div>
+                            <div class="impact-content">
+                                <h5>Frictionless Onboarding</h5>
+                                <p>Integrated Truecaller SDK into the authentication microservices, improving successful onboarding rates by 20%.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="fa-solid fa-earth-asia"></i></div>
+                            <div class="impact-content">
+                                <h5>Vernacular Translation</h5>
+                                <p>Built an AI-assisted pipeline using Google Translate and Generative AI to standardize regional Indian addresses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="project-card glass-card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>AI-Powered Ecommerce Platform</h3>
+                        <p class="project-tech">Spring Boot • MCP Integration • Java 17 • Kubernetes</p>
+                    </div>
+                    <p class="project-desc">
+                        Developed a custom MCP (Model Context Protocol) server from scratch to expose Snapdeal’s product catalog for semantic search and discovery. Integrated with Claude Desktop as an MCP client to enable a conversational shopping experience bridging the gap between LLM reasoning and live production data. Architected for high availability by deploying the server on Kubernetes within a private environment.
+                    </p>
+                    <div class="project-links">
+                        <button class="btn btn-primary" onclick="openModal('mcp-modal')"><i class="fa-solid fa-diagram-project"></i> View Architecture</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Case Study Modal -->
+    <div class="modal-overlay" id="mcp-modal" onclick="if(event.target == this) closeModal('mcp-modal')">
+        <div class="modal-content glass-card">
+            <span class="modal-close" onclick="closeModal('mcp-modal')"><i class="fa-solid fa-xmark"></i></span>
+            <h2 class="modal-title">MCP Server Architecture</h2>
+            <div class="modal-body">
+                <p>This project solved the massive challenge of allowing an LLM to accurately navigate and query Snapdeal's massive, frequently updating product catalog without hallucinating inventory or prices.</p>
+                <div class="architecture-diagram">
+                    <div class="arch-box">Claude Desktop Client</div>
+                    <i class="fa-solid fa-arrow-down arch-arrow"></i>
+                    <div class="arch-box highlight-box">Spring Boot 3 + MCP Server Layer</div>
+                    <i class="fa-solid fa-arrow-down arch-arrow"></i>
+                    <div class="arch-row">
+                        <div class="arch-box small">Catalog DB (MySQL)</div>
+                        <div class="arch-box small">Pricing Cache (Aerospike)</div>
+                    </div>
+                </div>
+                <ul class="modal-list">
+                    <li><strong>Challenge:</strong> Exposing legacy monolithic search APIs to AI clients cleanly.</li>
+                    <li><strong>Solution:</strong> Built a standalone Model Context Protocol (MCP) server using Java 17 that standardizes JSON-RPC communication between Claude and our internal APIs.</li>
+                    <li><strong>Deployment:</strong> Containerized via Docker and orchestrated on Kubernetes for zero-downtime rolling updates.</li>
                 </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Software Developer</p>
-                <h1>Hi, I'm <span>Nikhil</span> <br>Agrawal</h1>
             </div>
         </div>
     </div>
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/user.jpeg">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I'm Nikhil Agrawal from a city called Satna in Madhya Pradesh. Currently I'm in my III year of pursuing B.Tech. in Computer Science Engineering. I want to pursue a challenging career in the software engineering industry and be a part of the organization that gives a scope to enhance my knowledge and skills, which can be used to serve the company and provide excellent results.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">College Projects</p>
-                        <p class="tab-links" onclick="opentab('projects')">Personal Projects</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Programming</span><br>C • C++ • JavaScript • Matlab • CSS • 
-                                PHP • My SQL • Assembly 
-                                <br>Familiar: Python • Node.JS </li>
-                            <li><span>Markup</span><br>HTML</li>
-                            <li><span>Operating System</span><br>Windows 
-                                <br>Familiar: Linux </li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>December 2022</span><br>Land Registration using Blockchain “LandBlock”</li>
-                            <li><span>December 2022</span><br>Movie Recommendation System (Machine Learning)</li>
-                            <li><span>May 2022</span><br>Shortest Path and Cab Booking Service “Cabify” (C++ Algorithms)
-                            </li>
-                            <li><span>December 2021</span><br>Hospital Management System (HTML, CSS, JS, MySQL & PHP)
-                            </li>
-                            <li><span>December 2021</span><br>Implementation of Data Structures for Railway/Airplane Reservation 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="projects">
-                        <ul>
-                            <li><span>June 2022</span><br>Fitness Webpage</li>
-                            <li><span>June 2022</span><br>Food Delivery App Webpage</li>
-                            <li><span>May 2022</span><br>Black Jack Web Game
-                            </li>
-                            <li><span>January 2023</span><br>Educational Institute Webpage
-                            </li>
-                            <li><span>January 2023</span><br>Personal Portfolio Webpage 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2022-2024</span><br>B.Tech. (II Year-IV Year) from Jaypee Institute of Information Technology, Sector 62 (Noida)</li>
-                            <li><span>2021</span><br>B.Tech. (I Year) from S.R.M. Institute of Science and Technology, KTR (Chennai)</li>
-                            <li><span>2020</span><br>Senior Secondary from Mother's Pride Public Higher Secondary School, Satna (M.P.)</li>
-                            <li><span>2018</span><br>Secondary from St. Michael's Higher Secondary School, Satna (M.P.)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Software Development</h2>
-                    <p>Learning and Practicing languages like C++ & Python. Constantly learning algorithms and solving problems. Also did some projects on it.</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-crop"></i>
-                    <h2>Web Development</h2>
-                    <p>Learning and Practicing <br>Frontend - HTML, CSS, JavaScript , <br>Backend - Node.JS. <br>Also did some projects on it.</p>
-                </div>
-                <div>
-                    <i class="fa-brands fa-bitcoin"></i>
-                    <h2>Blockchain Development</h2>
-                    <p>Learning and Practicing language like Solidity which works on Ethereum Blockchain. Also did a project on it.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Work</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/work-3.jpg">
-                    <div class="layer">
-                        <h3>BlackJack WebGame</h3>
-                        <p>Made a simple black jack game where a user can play on a webpage. The whole game was made using HTML, CSS and JavaScript</p>
-                        <a href="https://github.com/nikhilagrawxl/BlackJack_Game_Webapp.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-2.jpg">
-                    <div class="layer">
-                        <h3>Food Delivery App Webpage</h3>
-                        <p>A responsive webpage for a food delivery app using HTML, CSS and JS.</p>
-                        <a href="https://github.com/nikhilagrawxl/Webpage_for_Food_Delivery_App.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-1.jpg">
-                    <div class="layer">
-                        <h3>Land Registration using Blockchain 
-                            <br>“LandBlock”</h3>
-                        <p>A project made using solidity on Ethereum blockchain which helps the user to register for land on blockchain. Frontend was made using HTML, CSS and JavaScript. Blockchain part was made using Solidity. Backend was made using MongoDB</p>
-                        <a href="https://github.com/nikhilagrawxl/Land_Registration_System_Using_Blockchain.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <a href="https://github.com/nikhilagrawxl?tab=repositories" class="btn">See More</a>
-        </div>
-    </div>
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><a href="mailto:niknir136@gmail.com"><i class="fa-solid fa-envelope"></i>niknir136@gmail.com</a></p>
-                    <p><a href="https://wa.me/+917587685847"><i class="fa-solid fa-phone"></i> +91-7587685847</a></p>
-                    <div class="social-icons">
-                        <a href="https://linkedin.com/in/nikhilagrawxl"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://github.com/nikhilagrawxl"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://twitter.com/nikhilagrawxl"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://instagram.com/nikhilagrawxl"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                    <a href="images/Nikhil A Resume3 (1) (1).pdf" download class="btn btn2">Download Resume</a>
-                </div>
-                <div class="contact-right">
-                    <form>
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © Nikhil Agrawal <i class="fa-solid fa-heart"></i></p>
-        </div>
-    </div>
-    <script>
-        var sidemeu=document.getElementById("sidemenu");
 
-        function openmenu(){
-            sidemeu.style.right="0";
-        }
+    <!-- Education & Awards Section -->
+    <section id="edu-awards" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Education & Awards</h2>
+            <div class="edu-grid">
+                <div class="edu-card glass-card">
+                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Jaypee Institute of Information Technology</h3>
+                    <p class="edu-degree">Bachelor of Technology in Computer Science & Engineering</p>
+                    <p class="edu-date">2020 - 2024 | Noida, India</p>
+                    <p class="edu-gpa">Cum. GPA: 8.1/10.0</p>
+                </div>
+                <div class="edu-card glass-card accent-card">
+                    <div class="edu-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Snapdeal Q1 FY 2025-26 Award</h3>
+                    <p class="edu-degree">Excellence Award</p>
+                    <p class="edu-desc">Recognized for contributions to high-impact cross-functional projects including AdTech, Conversion Tracking, and Reporting systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function closemenu(){
-            sidemeu.style.right="-200px";
-        }
-    </script>
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal">
+        <div class="container">
+            <div class="contact-wrapper glass-card">
+                <div class="contact-info">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Let's Connect</h2>
+                    <p class="contact-text">I'm currently looking for new opportunities and collaborations. My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                    
+                    <div class="contact-details">
+                        <a href="mailto:niknir136@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i> niknir136@gmail.com</a>
+                        <a href="https://wa.me/917587685847" class="contact-link"><i class="fa-brands fa-whatsapp"></i> +91-7587685847</a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/nikhilagrawxl" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/nikhilagrawxl" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://leetcode.com/u/nikhilxgrawal" target="_blank" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+                    </div>
+                </div>
+                <div class="contact-action">
+                    <a href="images/Nikhil A Resume3 (1) (1).pdf" class="btn btn-primary btn-large">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Designed & Built by Nikhil Agrawal</p>
+            <p class="footer-small">© 2026 Nikhil Agrawal. Powered by Caffeine and Microservices.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
 </body>
 </html>
