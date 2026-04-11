@@ -1,425 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Best Practices -->
-    <title>Nikhil Agrawal | Backend & AI Engineer</title>
-    <meta name="description"
-        content="Portfolio of Nikhil Agrawal, a Software Engineer specializing in backend systems, scalable microservices, and AI integrations at Snapdeal.">
-    <!-- Fonts and Styles -->
+    <title>Nikhil Agrawal | Backend Architect & AI Integrator</title>
+    <meta name="description" content="Portfolio of Nikhil Agrawal, a Software Engineer specializing in backend systems, scalable microservices, and AI integrations (Java, Spring, MCP).">
+    
+    <!-- Sophisticated Syne + Inter Font Pair -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
     <script src="https://kit.fontawesome.com/3a7c41cbf6.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <!-- Spring Boot Splash Screen Sequence -->
-    <div id="splash-screen">
-        <div class="spring-boot-terminal">
-            <pre id="spring-banner" class="hidden-banner">
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/
- :: Spring Boot ::               (v3.1.2)
-</pre>
-            <div id="splash-logs"></div>
-            <span class="typewriter-cursor" id="splash-cursor">|</span>
-        </div>
+    <!-- AI Node Graph Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom minimalist loader -->
+    <div id="loader">
+        <div class="loader-text">INITIALIZING <span class="accent">CONTEXT</span></div>
+        <div class="loader-bar"><div class="fill"></div></div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
-
-    <!-- Particle Background -->
-    <canvas id="particle-canvas"></canvas>
-
-    <!-- Header Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#hero" class="logo">NA<span>.</span></a>
-            <ul id="sidemenu" class="nav-links">
-                <li><a href="#about" class="nav-item">About</a></li>
-                <li><a href="#skills" class="nav-item">Skills</a></li>
-                <li><a href="#experience" class="nav-item">Experience</a></li>
-                <li><a href="#projects" class="nav-item">Projects</a></li>
-                <li><a href="#contact" class="nav-item">Contact</a></li>
-                <i class="fa-solid fa-xmark menu-icon" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
+    <!-- Minimalist Nav -->
+    <nav class="navbar">
+        <div class="nav-brand">NKHL.</div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About.</a>
+            <a href="#experience" class="nav-link">Experience.</a>
+            <a href="#projects" class="nav-link">Projects.</a>
+            <a href="#skills" class="nav-link">Skills.</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode"><i class="fa-solid fa-sun"></i></button>
+            <a href="#contact" class="nav-link contact-btn">Let's Talk</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="section hero-section reveal">
-        <div class="container hero-container">
+    <main data-scroll-container>
+        <!-- Hero -->
+        <section id="hero" class="hero section">
             <div class="hero-content">
-                <p class="hero-subtitle">Software Engineer @ Snapdeal (Acevector Group)</p>
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Nikhil Agrawal</span> Backend &amp; AI Engineer.
-                </h1>
-                <div class="typewriter-container">
-                    <span class="typewriter" id="typewriter"></span><span class="typewriter-cursor">|</span>
-                </div>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#about" class="btn btn-secondary">Run CLI</a>
+                <p class="hero-label reveal-up">Nikhil Agrawal — Software Engineer 1 @ Snapdeal</p>
+                <h1 class="hero-title reveal-up stagger-1">Software<br>Engineer.</h1>
+                <h1 class="hero-title accent reveal-up stagger-2">Backend & AI.</h1>
+                <p class="hero-desc reveal-up stagger-3">Building scalable backend architectures and seamlessly integrating advanced AI models into high-throughput production systems.</p>
+                <div class="hero-actions reveal-up stagger-4">
+                    <a href="#experience" class="btn-primary">View Experience</a>
+                    <a href="#contact" class="btn-outline">Let's Talk</a>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
 
-    <!-- About & Terminal Section -->
-    <section id="about" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text glass-card">
-                    <p>I'm Nikhil Agrawal, a Software Engineer specializing in backend development and AI orchestration.
-                        Currently, I work at Snapdeal, where I architect centralized microservices providing unified
-                        abstraction layers to seamlessly integrate advanced Large Language Models (LLMs).</p>
-                    <p>My expertise lies in building dynamic routing pipelines, high-speed session persistences using
-                        Aerospike, and sophisticated event processing systems with Apache Kafka.</p>
-                    <p>I am passionate about building automated pipelines, optimizing systems to reduce latency and
-                        dependencies, and driving measurable impact through innovative AI solutions.</p>
+        <!-- About (Split Screen) -->
+        <section id="about" class="section split-section">
+            <div class="split-left">
+                <h2 class="section-heading reveal-up">01. <br>About <br>Me.</h2>
+            </div>
+            <div class="split-right">
+                <div class="text-block reveal-up">
+                    <p class="large-text">I'm Nikhil Agrawal, a Software Engineer specializing in backend development and AI orchestration.</p>
                 </div>
-
-                <!-- Developer Terminal -->
-                <div class="terminal-container">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="close-btn"></span>
-                            <span class="min-btn"></span>
-                            <span class="max-btn"></span>
-                        </div>
-                        <div class="terminal-title">nikhil@portfolio:~</div>
-                    </div>
-                    <div class="terminal-body" id="terminal-body"
-                        onclick="document.getElementById('terminal-input').focus()">
-                        <div class="terminal-output" id="terminal-output">
-                            <span class="term-system">Booting NikhilOS v2.0...</span><br>
-                            <span class="term-system">Connection securely established.</span><br>
-                            Welcome to the interactive CLI! Type <span class="highlight-code">'help'</span> to see
-                            available commands.<br><br>
-                        </div>
-                        <div class="terminal-input-line">
-                            <span class="prompt">nikhil@portfolio:~$ </span>
-                            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
-                        </div>
-                    </div>
+                <div class="text-block reveal-up mt-2">
+                    <p>Currently engineering robust solutions at Snapdeal, I architect centralized microservices providing unified abstraction layers to seamlessly integrate advanced Large Language Models (LLMs).</p>
+                    <p style="margin-top: 15px;">My expertise lies in building dynamic routing pipelines, high-speed session persistences using Aerospike, and sophisticated event processing systems with Apache Kafka.</p>
+                </div>
+                
+                <h3 class="subsection-heading reveal-up mt-3" style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary);">Education & Awards</h3>
+                <div class="text-block reveal-up">
+                    <p style="margin-bottom: 5px;"><strong>Jaypee Institute of Information Technology</strong> (2020 - 2024)<br>Bachelor of Technology in Computer Science & Engineering<br>Cum. GPA: 8.1/10.0</p>
+                </div>
+                <div class="text-block reveal-up" style="margin-top: 15px;">
+                    <p style="margin-bottom: 5px;"><strong>Excellence Award - Snapdeal (Q1 FY 2025-26)</strong><br>Recognized for contributions to high-impact cross-functional projects including AdTech, Conversion Tracking, and Reporting systems.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category glass-card">
-                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Languages & Frameworks</h3>
-                    <ul class="skill-tags">
-                        <li>Java 17/8</li>
-                        <li>Python</li>
-                        <li>Spring Boot 3.x/2.x</li>
-                        <li>Microservices</li>
-                        <li>Hibernate</li>
-                        <li>REST APIs</li>
-                    </ul>
+        <!-- Experience (Bento Grid) -->
+        <section id="experience" class="section" style="max-width: 1400px; margin: 0 auto;">
+            <div class="container" style="padding: 0;">
+                <h2 class="section-heading text-center reveal-up" style="margin-bottom: 1rem;">02. Experience</h2>
+                <div class="text-center reveal-up" style="margin-bottom: 5rem;">
+                    <span style="font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">Snapdeal (Acevector Group)</span>
                 </div>
-                <div class="skill-category glass-card">
-                    <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
-                    <h3>Infrastructure & Tools</h3>
-                    <ul class="skill-tags">
-                        <li>Apache Kafka</li>
-                        <li>Kubernetes</li>
-                        <li>Docker</li>
-                        <li>Jenkins</li>
-                        <li>Grafana</li>
-                        <li>Pinpoint</li>
-                        <li>Linux & Git</li>
-                    </ul>
+                
+                <h3 class="role-title reveal-up">Software Engineer 1 <span>(Sept 2024 - Present)</span></h3>
+                
+                <div class="bento-grid reveal-up stagger-1">
+                    
+                    <div class="bento-card bento-stat-card wide">
+                        <div class="bento-header">
+                            <h4 class="bento-title">AI Orchestration Core</h4>
+                            <div class="bento-pill">Architecture</div>
+                        </div>
+                        <div class="bento-body">
+                            <p style="font-size: 1.15rem; color: var(--text-primary);">Centralized Spring Boot 3+ microservice bridging LLMs seamlessly into high-throughput production flows.</p>
+                        </div>
+                        <div class="bento-hover-content" style="text-align: left;">
+                            <p>Architected an extensible AI microservice providing a unified abstraction layer to swap LLMs (Vertex AI, Bedrock). Implemented dynamic routing, circuit breakers, and centralized prompt management.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-stat-card">
+                        <div class="bento-header">
+                            <h4 class="bento-title">Post-Order Chatbot</h4>
+                            <div class="bento-pill">Hover</div>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="3">0</span>x</div>
+                        <div class="stat-label">Reduction in CS call volume</div>
+                        <div class="bento-hover-content">
+                            <p>Engineered a production-grade post-order chatbot using Spring Boot 3 and Vertex AI, automating complex customer journeys using Aerospike.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-stat-card wide">
+                        <div class="bento-header">
+                            <h4 class="bento-title">Ads Reporting Engine</h4>
+                            <div class="bento-pill">Hover</div>
+                        </div>
+                        <div style="display:flex; justify-content: space-between; align-items:flex-end;">
+                            <div>
+                                <div class="stat-value">₹<span class="counter" data-target="15">0</span>L</div>
+                                <div class="stat-label">Daily Revenue Generated</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="stat-value">₹<span class="counter" data-target="50">0</span>L</div>
+                                <div class="stat-label">Monthly Savings vs 3rd Party</div>
+                            </div>
+                        </div>
+                        <div class="bento-hover-content" style="text-align: left;">
+                            <p>Revamped the Ads Seller & Admin panels by developing a high-performance frontend-integrated backend and automated reporting data-processing jobs.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card">
+                        <div class="bento-header">
+                            <h4 class="bento-title">VIP Subscription</h4>
+                        </div>
+                        <div class="bento-body">
+                            <p>Enhanced engine via an in-house Java A/B framework for real-time dynamic pricing at checkout and improved targeting via intent flags.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-stat-card wide">
+                        <div class="bento-header">
+                            <h4 class="bento-title">Kafka Event Pipelines</h4>
+                            <div class="bento-pill">Data Eng</div>
+                        </div>
+                        <div class="bento-body">
+                            <p style="font-size: 1.15rem; color: var(--text-primary);">Re-engineered conversion tracking with event stream decoupling and K8s migration, saving $300/mo.</p>
+                        </div>
+                        <div class="bento-hover-content" style="text-align: left;">
+                            <p>Re-engineered Ads conversion tracking pipelines using Kafka event processing and HBase. Decoupled workloads into specialized cron jobs, REST APIs, and Kafka consumers.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card">
+                        <div class="bento-header">
+                            <h4 class="bento-title">Query Rewriting</h4>
+                        </div>
+                        <div class="bento-body">
+                            <p>Integrated Amazon Bedrock into the core search service to rewrite failed, zero-result queries, directly improving the conversion rate.</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="skill-category glass-card">
-                    <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>Databases</h3>
-                    <ul class="skill-tags">
-                        <li>MySQL</li>
-                        <li>Cassandra</li>
-                        <li>HBase</li>
-                        <li>Aerospike</li>
-                        <li>AWS S3</li>
-                    </ul>
+
+                <h3 class="role-title reveal-up" style="margin-top: 5rem;">Graduate Engineering Trainee <span>(Jan 2024 - Sept 2024)</span></h3>
+                
+                <div class="bento-grid reveal-up stagger-1">
+                    <div class="bento-card bento-stat-card">
+                        <div class="bento-header">
+                            <h4 class="bento-title">Frictionless Onboarding</h4>
+                            <div class="bento-pill">Hover</div>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="20">0</span>%</div>
+                        <div class="stat-label">Improvement in success rates</div>
+                        <div class="bento-hover-content">
+                            <p>Streamlined user onboarding by integrating the Truecaller SDK into the Snapdeal App and M-site authentication microservices. Reduced friction in the login/signup journey.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card wide">
+                        <div class="bento-header">
+                            <h4 class="bento-title">Vernacular Translation</h4>
+                            <div class="bento-pill">Vertex AI</div>
+                        </div>
+                        <div class="bento-body">
+                            <p>Developed an AI-assisted vernacular address translation pipeline using Google Translate API and Vertex AI to standardize regional Indian addresses into English. This heavily reduced RTO (Return to Origin) rates and delivery failures caused by courier non-compliance with vernacular formats.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category glass-card">
-                    <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>AI / LLM</h3>
-                    <ul class="skill-tags">
-                        <li>Large Language Models (LLMs)</li>
-                        <li>Generative AI</li>
-                        <li>Spring AI</li>
-                        <li>MCP (Model Context Protocol)</li>
-                    </ul>
-                </div>
+
             </div>
+        </section>
 
-            <h3 class="telemetry-title">Live System Telemetry</h3>
-            <div class="telemetry-dashboard">
-                <div class="telemetry-panel">
-                    <div class="panel-header">
-                        <h4><i class="fa-solid fa-server"></i> Server Load (Java/Spring)</h4>
-                        <div class="status-indicator"></div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <canvas id="chart-load" class="telemetry-chart"></canvas>
-                    </div>
-                </div>
-                <div class="telemetry-panel">
-                    <div class="panel-header">
-                        <h4><i class="fa-solid fa-network-wired"></i> Kafka Throughput (EPS)</h4>
-                        <div class="status-indicator warning"></div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <canvas id="chart-kafka" class="telemetry-chart"></canvas>
-                    </div>
-                </div>
-                <div class="telemetry-panel">
-                    <div class="panel-header">
-                        <h4><i class="fa-solid fa-microchip"></i> AI Model Inference Latency</h4>
-                    </div>
-                    <div class="gauge-container">
-                        <div class="gauge-ring-wrapper">
-                            <div class="gauge-ring"></div>
-                            <div class="gauge-value" id="latency-val">45<span class="unit">ms</span></div>
-                        </div>
-                        <div class="gauge-label">Status: Optimal</div>
-                    </div>
-                </div>
+        <!-- Projects -->
+        <section id="projects" class="section split-section">
+            <div class="split-left">
+                <h2 class="section-heading reveal-up">03. <br>Projects.</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item glass-card">
-                    <div class="timeline-date">Sept 2024 - Present</div>
-                    <h3>Software Engineer 1</h3>
-                    <h4>Snapdeal (Acevector Group) - Gurugram, Haryana</h4>
-
-                    <div class="impact-grid">
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-code-branch"></i></div>
-                            <div class="impact-content">
-                                <h5>AI Orchestration Core</h5>
-                                <p>Architected a centralized microservice (Java 17 / Spring Boot) abstracting and
-                                    routing various LLMs.</p>
-                            </div>
-                        </div>
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-headset"></i></div>
-                            <div class="impact-content">
-                                <h5>Post-Order Chatbot</h5>
-                                <p>Automated complex customer return journeys, resulting in a 3x reduction in support
-                                    call volume.</p>
-                            </div>
-                        </div>
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <div class="impact-content">
-                                <h5>Ads Reporting Engine</h5>
-                                <p>Revamped Seller panels and launched an automated reporting system generating ₹15L
-                                    daily revenue.</p>
-                            </div>
-                        </div>
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-network-wired"></i></div>
-                            <div class="impact-content">
-                                <h5>Kafka Event Pipelines</h5>
-                                <p>Re-engineered the Ads conversion tracking pipelines using Kafka event streaming and
-                                    HBase persistence.</p>
-                            </div>
-                        </div>
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-tags"></i></div>
-                            <div class="impact-content">
-                                <h5>Dynamic VIP Pricing</h5>
-                                <p>Enhanced the VIP Subscription engine for real-time pricing at checkout via a custom
-                                    A/B testing framework.</p>
-                            </div>
-                        </div>
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                            <div class="impact-content">
-                                <h5>Search Query Rewriting</h5>
-                                <p>Integrated LLMs into the core search service to rescue failed queries, boosting
-                                    search-to-detail conversions.</p>
-                            </div>
-                        </div>
+            <div class="split-right">
+                
+                <div class="bento-card reveal-up" style="padding-top: 40px; padding-bottom: 40px;">
+                    <div class="project-meta">
+                        <span class="project-year">Spring Boot + MCP</span>
+                        <span class="project-role"><a href="https://github.com/nikhilagrawxl" target="_blank" style="color:inherit; text-decoration:none;">Github</a> | Dec 2025</span>
                     </div>
-                </div>
-
-                <div class="timeline-item glass-card">
-                    <div class="timeline-date">Jan 2024 - Sept 2024</div>
-                    <h3>Graduate Engineer Trainee</h3>
-                    <h4>Snapdeal (Acevector Group) - Gurugram, Haryana</h4>
-
-                    <div class="impact-grid">
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-user-shield"></i></div>
-                            <div class="impact-content">
-                                <h5>Frictionless Onboarding</h5>
-                                <p>Integrated Truecaller SDK into the authentication microservices, improving successful
-                                    onboarding rates by 20%.</p>
-                            </div>
-                        </div>
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="fa-solid fa-earth-asia"></i></div>
-                            <div class="impact-content">
-                                <h5>Vernacular Translation</h5>
-                                <p>Built an AI-assisted pipeline using Google Translate and Generative AI to standardize
-                                    regional Indian addresses.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Featured Work</h2>
-            <div class="project-card glass-card">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>AI-Powered Ecommerce Platform</h3>
-                        <p class="project-tech">Spring Boot • MCP Integration • Java 17 • Kubernetes</p>
-                    </div>
-                    <p class="project-desc">
-                        Developed a custom MCP (Model Context Protocol) server from scratch to expose Snapdeal’s product
-                        catalog for semantic search and discovery. Integrated with Claude Desktop as an MCP client to
-                        enable a conversational shopping experience bridging the gap between LLM reasoning and live
-                        production data. Architected for high availability by deploying the server on Kubernetes within
-                        a private environment.
+                    <h3 class="project-title" style="font-size: 2.4rem; margin-top: 10px; margin-bottom: 1.5rem; color: var(--text-primary); letter-spacing: -0.02em;">AI-Powered Ecommerce Platform</h3>
+                    
+                    <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 15px; font-weight:300;">
+                        Developed a custom <strong>MCP (Model Context Protocol)</strong> server from scratch using Java 17, Spring Boot 3+, and Spring AI to expose Snapdeal’s product catalog for semantic search and discovery.
                     </p>
-                    <div class="project-links">
-                        <button class="btn btn-primary" onclick="openModal('mcp-modal')"><i
-                                class="fa-solid fa-diagram-project"></i> View Architecture</button>
+                    <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 15px; font-weight:300;">
+                        Integrated with Claude Desktop as an MCP client to enable a conversational shopping experience, bridging the gap between LLM reasoning and live production data.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 35px; font-weight:300;">
+                        Architected for high availability by deploying the server on Kubernetes within a private environment, ensuring secure and scalable natural language product discovery.
+                    </p>
+                    
+                    <div class="tech-stack">
+                        <span>Java 17</span><span>Spring Boot 3</span><span>Spring AI</span><span>MCP</span><span>Kubernetes</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-heading text-center reveal-up">04. Tech Stack</h2>
+                
+                <div class="expertise-grid">
+                    <div class="expertise-card reveal-up">
+                        <div class="card-header">
+                            <span class="card-number">/01</span>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>Java 17 / 8</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-card reveal-up stagger-1">
+                        <div class="card-header">
+                            <span class="card-number">/02</span>
+                            <h3>Frameworks</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>Spring Boot 3.x / 2.x</li>
+                            <li>Microservices</li>
+                            <li>Hibernate / REST APIs</li>
+                            <li>Apache Kafka</li>
+                            <li>Spring AI</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-card reveal-up stagger-2">
+                        <div class="card-header">
+                            <span class="card-number">/03</span>
+                            <h3>AI / LLM</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>Google Vertex AI</li>
+                            <li>Amazon Bedrock</li>
+                            <li>MCP (Model Context Protocol)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-card reveal-up stagger-3">
+                        <div class="card-header">
+                            <span class="card-number">/04</span>
+                            <h3>Databases</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>MySQL / Cassandra</li>
+                            <li>HBase / Aerospike</li>
+                            <li>AWS S3</li>
+                        </ul>
+                    </div>
+
+                    <div class="expertise-card reveal-up stagger-4">
+                        <div class="card-header">
+                            <span class="card-number">/05</span>
+                            <h3>Tools</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>Linux / Git</li>
+                            <li>Kubernetes / Docker</li>
+                            <li>Jenkins CI/CD</li>
+                            <li>Grafana / Pinpoint</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Project Case Study Modal -->
-    <div class="modal-overlay" id="mcp-modal" onclick="if(event.target == this) closeModal('mcp-modal')">
-        <div class="modal-content glass-card">
-            <span class="modal-close" onclick="closeModal('mcp-modal')"><i class="fa-solid fa-xmark"></i></span>
-            <h2 class="modal-title">MCP Server Architecture</h2>
-            <div class="modal-body">
-                <p>This project solved the massive challenge of allowing an LLM to accurately navigate and query
-                    Snapdeal's massive, frequently updating product catalog without hallucinating inventory or prices.
-                </p>
-                <div class="architecture-diagram">
-                    <div class="arch-box">Claude Desktop Client</div>
-                    <i class="fa-solid fa-arrow-down arch-arrow"></i>
-                    <div class="arch-box highlight-box">Spring Boot 3 + MCP Server Layer</div>
-                    <i class="fa-solid fa-arrow-down arch-arrow"></i>
-                    <div class="arch-row">
-                        <div class="arch-box small">Catalog DB (MySQL)</div>
-                        <div class="arch-box small">Pricing Cache (Aerospike)</div>
-                    </div>
-                </div>
-                <ul class="modal-list">
-                    <li><strong>Challenge:</strong> Exposing legacy monolithic search APIs to AI clients cleanly.</li>
-                    <li><strong>Solution:</strong> Built a standalone Model Context Protocol (MCP) server using Java 17
-                        that standardizes JSON-RPC communication between Claude and our internal APIs.</li>
-                    <li><strong>Deployment:</strong> Containerized via Docker and orchestrated on Kubernetes for
-                        zero-downtime rolling updates.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Education & Awards Section -->
-    <section id="edu-awards" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Education & Awards</h2>
-            <div class="edu-grid">
-                <div class="edu-card glass-card">
-                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3>Jaypee Institute of Information Technology</h3>
-                    <p class="edu-degree">Bachelor of Technology in Computer Science & Engineering</p>
-                    <p class="edu-date">2020 - 2024 | Noida, India</p>
-                    <p class="edu-gpa">Cum. GPA: 8.1/10.0</p>
-                </div>
-                <div class="edu-card glass-card accent-card">
-                    <div class="edu-icon"><i class="fa-solid fa-trophy"></i></div>
-                    <h3>Snapdeal Q1 FY 2025-26 Award</h3>
-                    <p class="edu-degree">Excellence Award</p>
-                    <p class="edu-desc">Recognized for contributions to high-impact cross-functional projects including
-                        AdTech, Conversion Tracking, and Reporting systems.</p>
+        <!-- Contact Minimal -->
+        <section id="contact" class="section contact-section">
+            <div class="container text-center" style="max-width: 800px;">
+                <h2 class="contact-heading reveal-up stagger-1" style="margin-bottom: 25px; font-size: clamp(3rem, 7vw, 5rem); letter-spacing: -0.03em;">Let's Talk.</h2>
+                <p class="hero-desc reveal-up stagger-2" style="margin: 0 auto 3.5rem auto; text-align: center;">Have a challenging backend problem or an AI integration in mind? I'm currently open for new opportunities and collaborations.</p>
+                
+                <a href="mailto:niknir136@gmail.com" class="btn-primary reveal-up stagger-2" style="display: inline-block;">Send an Email</a>
+                
+                <div class="social-footer reveal-up stagger-3" style="margin-top: 5rem; margin-bottom: 3rem;">
+                    <a href="https://linkedin.com/in/nikhilagrawxl" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/nikhilagrawxl" target="_blank">GitHub</a>
+                    <a href="https://leetcode.com/u/nikhilxgrawal" target="_blank">LeetCode</a>
+                    <a href="images/Nikhil A Resume3 (1) (1).pdf" target="_blank">Resume</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <p class="copyright text-center">© 2026 Nikhil Agrawal. All rights reserved.</p>
+        </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section reveal">
-        <div class="container">
-            <div class="contact-wrapper glass-card">
-                <div class="contact-info">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Let's Connect</h2>
-                    <p class="contact-text">I'm currently looking for new opportunities and collaborations. My inbox is
-                        always open. Whether you have a question or just want to say hi, I'll try my best to get back to
-                        you!</p>
-
-                    <div class="contact-details">
-                        <a href="mailto:niknir136@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i>
-                            niknir136@gmail.com</a>
-                        <a href="https://wa.me/917587685847" class="contact-link"><i class="fa-brands fa-whatsapp"></i>
-                            +91-7587685847</a>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/nikhilagrawxl" target="_blank" aria-label="LinkedIn"><i
-                                class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://github.com/nikhilagrawxl" target="_blank" aria-label="GitHub"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://leetcode.com/u/nikhilxgrawal" target="_blank" aria-label="LeetCode"><i
-                                class="fa-solid fa-code"></i></a>
-                    </div>
-                </div>
-                <div class="contact-action">
-                    <a href="images/Nikhil A Resume3 (1) (1).pdf" class="btn btn-primary btn-large">Download Resume</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Designed & Built by Nikhil Agrawal</p>
-            <p class="footer-small">© 2026 Nikhil Agrawal. Powered by Caffeine and Microservices.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
     <script src="app.js"></script>
 </body>
-
 </html>
