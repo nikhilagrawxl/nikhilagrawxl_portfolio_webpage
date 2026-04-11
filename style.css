@@ -362,14 +362,31 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; line-height
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .section { padding: 10vh 5%; }
-    .hero-title { font-size: 3.5rem; }
-    .project-title { font-size: 2rem; }
-    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .nav-link { display: none; }
+    .nav-links { display: flex; gap: 15px; } /* Ensures toggle button remains visible */
+    .section { padding: 6vh 5%; overflow-x: hidden; }
+    .hero-title { font-size: clamp(3rem, 12vw, 4rem); }
+    .section-heading, .contact-heading { font-size: clamp(2.5rem, 10vw, 3.5rem) !important; }
+    .project-title { font-size: 1.8rem; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-outline { width: 100%; text-align: center; }
     
     /* Bento Mobile */
     .bento-grid { grid-template-columns: 1fr; }
     .bento-card.wide, .bento-card.bento-tall { grid-column: span 1; grid-row: span 1; }
+    .bento-card { padding: 20px; }
+    .stat-value { font-size: 3rem; }
+    
+    .role-title { flex-direction: column; gap: 5px; font-size: 1.4rem; border-bottom: none; }
+    .split-section { gap: 30px; }
+    
+    /* Ads reporting stat card fix */
+    .bento-stat-card > div[style*="display:flex"] { 
+        flex-direction: column !important; 
+        align-items: flex-start !important; 
+        gap: 20px; 
+    }
+    .bento-stat-card > div[style*="display:flex"] > div {
+        text-align: left !important;
+    }
 }
