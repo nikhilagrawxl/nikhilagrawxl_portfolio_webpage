@@ -378,7 +378,7 @@ p {
     font-family: var(--font-main);
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
-    height: 2rem;
+    min-height: 2.5rem;
 }
 
 .typewriter-cursor {
@@ -1021,7 +1021,7 @@ footer p { margin-bottom: 0.5rem; }
     }
     .hero-title { font-size: 2.6rem; margin-bottom: 15px; }
     .hero-subtitle { font-size: 1rem; margin-bottom: 10px; }
-    .typewriter-container { align-items: center; justify-content: center; width: 100%; margin-bottom: 25px; }
+    .typewriter-container { align-items: center; justify-content: center; width: 100%; margin-bottom: 25px; min-height: 3.5rem; height: auto; }
     .typewriter-container h2 { font-size: 1.1rem; text-align: center; }
     
     .hero-actions { flex-direction: column; width: 100%; align-items: center; gap: 15px; }
