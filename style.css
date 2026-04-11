@@ -1011,4 +1011,28 @@ footer p { margin-bottom: 0.5rem; }
     .menu-icon { display: block !important; }
     .hero-actions { flex-direction: column; }
     .hero-actions .btn { width: 100%; }
+    
+    /* Splash Screen Mobile Fixes */
+    #splash-screen { padding: 15px; }
+    .spring-boot-terminal { font-size: 0.65rem; }
+    #spring-banner { display: none !important; }
+    
+    /* General Scaledowns for Mobile */
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .typewriter-container h2 { font-size: 1.1rem; }
+    h2.section-title { font-size: 1.8rem; margin-bottom: 2rem; }
+    .telemetry-title { font-size: 1.4rem; margin-top: 3rem; }
+    
+    /* Restricting padding and margins */
+    .glass-card { padding: 1.2rem; }
+    .section { padding: 60px 0; }
+    
+    /* Compacting internal layouts */
+    .telemetry-dashboard { gap: 15px; }
+    .telemetry-panel { padding: 12px; }
+    .impact-card { padding: 12px; gap: 12px; flex-direction: column; align-items: flex-start; }
+    
+    /* Terminal scaledown */
+    .terminal-body { font-size: 0.8rem; padding: 12px; }
 }
