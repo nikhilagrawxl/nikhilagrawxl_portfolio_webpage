@@ -375,7 +375,7 @@ p {
 
 .typewriter-container {
     font-size: 1.5rem;
-    font-family: var(--font-mono);
+    font-family: var(--font-main);
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     height: 2rem;
@@ -765,9 +765,10 @@ p {
 }
 
 .impact-content h5 {
-    font-family: var(--font-mono);
+    font-family: var(--font-main);
+    font-weight: 600;
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 5px;
 }
 
