@@ -986,6 +986,7 @@ footer p { margin-bottom: 0.5rem; }
 }
 
 @media screen and (max-width: 768px) {
+    /* Mobile Navigation */
     .nav-links.nav-links {
         position: fixed;
         background: rgba(5, 5, 5, 0.95);
@@ -1010,37 +1011,64 @@ footer p { margin-bottom: 0.5rem; }
         color: var(--text-primary);
     }
     .menu-icon { display: block !important; }
-    .hero-actions { flex-direction: column; }
-    .hero-actions .btn { width: 100%; }
+
+    /* Hero Section - App Centered */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-title { font-size: 2.6rem; margin-bottom: 15px; }
+    .hero-subtitle { font-size: 1rem; margin-bottom: 10px; }
+    .typewriter-container { align-items: center; justify-content: center; width: 100%; margin-bottom: 25px; }
+    .typewriter-container h2 { font-size: 1.1rem; text-align: center; }
     
-    /* Splash Screen Mobile Fixes */
+    .hero-actions { flex-direction: column; width: 100%; align-items: center; gap: 15px; }
+    .hero-actions .btn { width: 100%; max-width: 300px; }
+    
+    /* Splash Screen Mobile Scroll */
     #splash-screen { padding: 15px; }
-    .spring-boot-terminal { font-size: 0.65rem; }
+    .spring-boot-terminal { font-size: 0.7rem; }
     #spring-banner { 
         display: block !important; 
-        font-size: 0.35rem; 
+        font-size: 8px; 
+        -webkit-text-size-adjust: none;
         line-height: 1.1; 
-        margin-bottom: 10px;
+        overflow-x: auto;
+        white-space: pre;
+        padding-bottom: 10px;
         color: #27c93f;
     }
     
-    /* General Scaledowns for Mobile */
-    .hero-title { font-size: 2.2rem; }
-    .hero-subtitle { font-size: 1rem; }
-    .typewriter-container h2 { font-size: 1.1rem; }
-    h2.section-title { font-size: 1.8rem; margin-bottom: 2rem; }
-    .telemetry-title { font-size: 1.4rem; margin-top: 3rem; }
-    
-    /* Restricting padding and margins */
-    .glass-card { padding: 1.2rem; }
+    /* Global Restricting */
+    h2.section-title { font-size: 2rem; margin-bottom: 2.5rem; text-align: center; }
+    .glass-card { padding: 1.5rem; border-radius: 16px; }
     .section { padding: 60px 0; }
     
-    /* Compacting internal layouts */
-    .telemetry-dashboard { gap: 15px; }
-    .telemetry-panel { padding: 12px; }
-    .impact-card { padding: 12px; gap: 15px; flex-direction: row; align-items: flex-start; }
-    .impact-icon { width: 30px; height: 30px; font-size: 1rem; }
+    /* Telemetry Mobile Centered */
+    .telemetry-title { font-size: 1.6rem; margin-top: 3rem; text-align: center; }
+    .telemetry-dashboard { gap: 20px; }
+    .telemetry-panel { padding: 15px; border-radius: 12px; }
+    
+    /* Experience Impact Cards - App Like Tile */
+    .timeline-item h3, .timeline-item h4 { text-align: center; }
+    .timeline-date { text-align: center; margin-bottom: 10px; display: block; }
+    .impact-card { 
+        padding: 20px 15px; 
+        gap: 10px; 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .impact-icon { 
+        width: 45px; 
+        height: 45px; 
+        font-size: 1.2rem; 
+        margin-bottom: 5px;
+    }
     
     /* Terminal scaledown */
-    .terminal-body { font-size: 0.8rem; padding: 12px; }
+    .terminal-body { font-size: 0.8rem; padding: 15px; }
 }
