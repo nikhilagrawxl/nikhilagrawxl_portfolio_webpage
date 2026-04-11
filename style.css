@@ -1015,7 +1015,13 @@ footer p { margin-bottom: 0.5rem; }
     /* Splash Screen Mobile Fixes */
     #splash-screen { padding: 15px; }
     .spring-boot-terminal { font-size: 0.65rem; }
-    #spring-banner { display: none !important; }
+    #spring-banner { 
+        display: block !important; 
+        font-size: 0.35rem; 
+        line-height: 1.1; 
+        margin-bottom: 10px;
+        color: #27c93f;
+    }
     
     /* General Scaledowns for Mobile */
     .hero-title { font-size: 2.2rem; }
@@ -1031,7 +1037,8 @@ footer p { margin-bottom: 0.5rem; }
     /* Compacting internal layouts */
     .telemetry-dashboard { gap: 15px; }
     .telemetry-panel { padding: 12px; }
-    .impact-card { padding: 12px; gap: 12px; flex-direction: column; align-items: flex-start; }
+    .impact-card { padding: 12px; gap: 15px; flex-direction: row; align-items: flex-start; }
+    .impact-icon { width: 30px; height: 30px; font-size: 1rem; }
     
     /* Terminal scaledown */
     .terminal-body { font-size: 0.8rem; padding: 12px; }
