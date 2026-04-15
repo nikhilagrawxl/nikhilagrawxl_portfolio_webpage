@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
             loader.style.opacity = '0';
             loader.style.visibility = 'hidden';
             setTimeout(() => {
-                document.body.style.overflow = 'auto';
+                document.body.style.overflowY = 'auto';
+                document.body.style.overflowX = 'hidden';
                 initObserver();
             }, 1000);
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.style.overflowY = 'auto';
+            document.body.style.overflowX = 'hidden';
             initObserver();
         }
     }, 1500);
@@ -220,5 +222,33 @@ document.addEventListener("DOMContentLoaded", () => {
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun'); // Show sun in dark mode to switch TO light
         }
+    }
+
+    // 7. Mobile Menu Logic
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflowY = 'hidden';
+            } else {
+                document.body.style.overflowY = 'auto';
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflowY = 'auto';
+            });
+        });
     }
 });

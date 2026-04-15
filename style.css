@@ -51,7 +51,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
 body {
     background-color: var(--bg-main);
@@ -59,6 +59,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     transition: background-color 0.5s ease, color 0.5s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -67,7 +68,7 @@ body {
 /* Background Canvas */
 #bg-canvas {
     position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
+    top: 0; left: 0; width: 100%; height: 100vh;
     z-index: -1;
     pointer-events: none;
     opacity: 0.6;
@@ -138,6 +139,47 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; line-height
 .nav-link:hover { color: var(--text-muted); }
 .contact-btn { border: 1px solid var(--grid-border); padding: 12px 24px; border-radius: 4px; transition: all 0.3s ease; }
 .contact-btn:hover { background: var(--text-primary); color: var(--bg-main); }
+.nav-controls { display: flex; gap: 20px; align-items: center; }
+.hamburger-btn { display: none; flex-direction: column; gap: 6px; background: transparent; border: none; cursor: pointer; z-index: 100; padding: 5px;}
+.hamburger-btn .bar { width: 30px; height: 1.5px; background: var(--text-primary); transition: all 0.3s ease; transform-origin: center; }
+.hamburger-btn.active .bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger-btn.active .bar:nth-child(2) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Mobile Overlay Menu */
+.mobile-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: var(--nav-bg);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    z-index: 99;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-overlay.active {
+    opacity: 1; visibility: visible;
+    transform: translateY(0);
+}
+.mobile-links { display: flex; flex-direction: column; gap: 40px; text-align: center; }
+.mobile-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    opacity: 0; transform: translateY(20px);
+    transition: color 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+.mobile-link:hover { color: var(--text-muted); }
+.mobile-overlay.active .mobile-link { opacity: 1; transform: translateY(0); }
+.mobile-overlay.active .mobile-link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-overlay.active .mobile-link:nth-child(2) { transition-delay: 0.15s; }
+.mobile-overlay.active .mobile-link:nth-child(3) { transition-delay: 0.2s; }
+.mobile-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.25s; }
+.mobile-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.3s; }
+
 .theme-toggle {
     background: transparent;
     border: none;
@@ -362,8 +404,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; line-height
 }
 
 @media (max-width: 768px) {
-    .nav-link { display: none; }
-    .nav-links { display: flex; gap: 15px; } /* Ensures toggle button remains visible */
+    .nav-links { display: none; }
+    .hamburger-btn { display: flex; }
     .section { padding: 6vh 5%; overflow-x: hidden; }
     .hero-title { font-size: clamp(3rem, 12vw, 4rem); }
     .section-heading, .contact-heading { font-size: clamp(2.5rem, 10vw, 3.5rem) !important; }
@@ -374,7 +416,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; line-height
     /* Bento Mobile */
     .bento-grid { grid-template-columns: 1fr; }
     .bento-card.wide, .bento-card.bento-tall { grid-column: span 1; grid-row: span 1; }
-    .bento-card { padding: 20px; }
+    .bento-card { padding: 20px; overflow: visible; }
     .stat-value { font-size: 3rem; }
     
     .role-title { flex-direction: column; gap: 5px; font-size: 1.4rem; border-bottom: none; }
